@@ -4,7 +4,7 @@ namespace Tests;
 
 use Illuminate\Contracts\Console\Kernel;
 use Artisan; //追記 artisanコマンドを使用可能にする
-use App\Todo; //追記　Todo.phpを使用可能にする
+use App\Todo; //追記　Todo.phpモデルを使用可能にし、table操作を行えるようにする
 
 trait CreatesApplication//traitは複数のメソッドをまとめたもの　useすることでそのclass内に加えることができる
 {
@@ -21,11 +21,11 @@ trait CreatesApplication//traitは複数のメソッドをまとめたもの　u
 
         return $app;
     }
-    //追記
-    public function prepareForTests()
+
+    public function prepareForTests() //追記
     {
-        Artisan::call('migrate');
-        if(!Todo::all()->count()){
+        Artisan::call('migrate');//テスト用にmigrateとseedを行えるように、Artisanコマンドを使用可能にする
+        if(!Todo::all()->count()){//todosテーブルにデータがなければseedを走らせる
             Artisan::call('db:seed');
         }
     }

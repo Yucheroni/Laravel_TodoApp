@@ -43,12 +43,12 @@ class LoginController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function logout(Request $request)
+    public function logout(Request $request)//ユーザーリクエストをインスタンス化
     {
-        $this->guard()->logout();
+        $this->guard()->logout();//useしてきたファイルにあるメソッドを使用。
 
         $request->session()->invalidate();
 
-        return redirect('/login');
+        return redirect('/login');//ログイン画面にリダイレクト
     }
 }

@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Todo extends Model
 {
-    protected $fillable = [
-      'title',//titleカラムしかテーブルに登録できないようにフィルターをかける
-      'user_id'
+    protected $fillable = [ //テーブルにレコードを登録できるカラムに制限をかける
+      'title',
+      'user_id' 
     ];
+
     public function getAll($id)//追記
     {
       // select * from todos where user_id = 1;

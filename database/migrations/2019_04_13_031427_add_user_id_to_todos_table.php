@@ -14,7 +14,7 @@ class AddUserIdToTodosTable extends Migration
     public function up()
     {
         Schema::table('todos', function (Blueprint $table) {
-            $table->integer('user_id');//追記
+            $table->integer('user_id');//追記　todosテーブルに対しuser_idカラムを追加
         });
     }
 
@@ -26,7 +26,7 @@ class AddUserIdToTodosTable extends Migration
     public function down()
     {
         Schema::table('todos', function (Blueprint $table) {
-             $table->integer('user_id');//追記
+            $table->integer('user_id');//追記
         });
     }
 }

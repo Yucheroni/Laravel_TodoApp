@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Database\Seeder;
+use Illuminate\Database\Seeder;//seederクラスを継承
 
 class DatabaseSeeder extends Seeder
 {
@@ -9,9 +9,9 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    public function run() //runメソッド
+    public function run() //runメソッドの実行によりシーディング処理
     {
       // $this->call(UsersTableSeeder::class);
-      $this->call(TodosTableSeeder::class); //同階層ファイルで追加したクラスを呼び出す
+      $this->call(TodosTableSeeder::class); //seederクラスのcallメソッドで、引数に作成したシーディングファイルとclassプロパティを呼び出す
     }
 }
