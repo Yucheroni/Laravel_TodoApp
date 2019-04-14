@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -26,7 +27,7 @@ class AddUserIdToTodosTable extends Migration
     public function down()
     {
         Schema::table('todos', function (Blueprint $table) {
-            $table->integer('user_id');//追記
+            $table->integer('user_id')->default(0);//追記
         });
     }
 }

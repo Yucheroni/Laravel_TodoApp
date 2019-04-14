@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 use Illuminate\Database\Seeder;//Seederクラスを継承
 use Carbon\Carbon;//日付取得が可能なライブラリ
